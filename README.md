@@ -12,7 +12,48 @@ This script automates the process of navigating through BPUT (Biju Patnaik Unive
    - Install the "User JavaScript and CSS" extension from the provided [link](https://chromewebstore.google.com/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld).
 
 2. **Copy and Paste Code:**
-   - Copy the provided JavaScript code.
+   - Copy the provided JavaScript code below.
+  
+  ---      
+ <details>
+  <summary>JavaScript Code</summary>
+
+```javascript
+// Function to load student results
+function loadStudentResults(studentId) {
+    // Call the function with the provided studentId
+    getStudentSemResults(studentId, 1);
+}
+// GANDHI ACADEMY OF TECHNOLOGY ENGINEERING, BERHAMPUR
+// Initial student ID
+let currentStudentId = 2305324000;
+
+// Function to handle key presses
+function handleKeyPress(event) {
+    // Right arrow key
+    if (event.keyCode === 39) {
+        // Increment student ID
+        currentStudentId++;
+        // Load results for the next student
+        loadStudentResults(currentStudentId);
+    }
+    // Left arrow key
+    else if (event.keyCode === 37) {
+        // Decrement student ID
+        currentStudentId--;
+        // Load results for the previous student
+        loadStudentResults(currentStudentId);
+    }
+}
+
+// Add event listener for key presses
+document.addEventListener('keydown', handleKeyPress);
+
+```
+</details>
+
+---
+
 
 3. **Configure Extension:**
    - Open the "User JavaScript and CSS" extension.
@@ -36,3 +77,4 @@ This script automates the process of navigating through BPUT (Biju Patnaik Unive
 ### Disclaimer
 - The functionality of this script is subject to changes in the target website's structure or policies.
 - Use at your own risk. There is no guarantee of perpetual compatibility with the results website.
+
